@@ -38,6 +38,14 @@ export default function Projects() {
             >
               <h6 className="mb-2 font-semibold">{project.title}</h6>
               <p className="mb-4 text-neutral-400">{project.description}</p>
+              {project.link && (
+                <button
+                  onClick={() => window.open(project.link, "_blank")}
+                  className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-all mx-2 "
+                >
+                  View Project
+                </button>
+              )}
               {project.technologies.map((tech, index) => (
                 <span key={index} className="mr-2 text-sm text-white-800">
                   {tech}
